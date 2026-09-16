@@ -1,0 +1,395 @@
+/* ==========================================================================
+   WORDPRESS ARCHITECT & PERFORMANCE PLATFORM
+   Exact Reference Image Master Stylesheet: Dazzling Cyber-Glow & Precision Aesthetics
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Root Variables & High-Contrast Cyber Palette
+   -------------------------------------------------------------------------- */
+:root {
+  --bg-deep: #04060c;
+  --bg-card: #090e1a;
+  --bg-card-elevated: #0f172a;
+  --border-subtle: rgba(255, 255, 255, 0.08);
+
+  /* Primary High-Intensity Neon Palette */
+  --neon-cyan: #00f0ff;
+  --cyan-glow: rgba(0, 240, 255, 0.45);
+  --cyan-soft-glow: rgba(0, 240, 255, 0.15);
+
+  --fire-orange: #ff5e36;
+  --fire-red: #ff3b30;
+  --sunset-gold: #ffa000;
+  --orange-glow: rgba(255, 94, 54, 0.45);
+
+  --neon-emerald: #10b981;
+  --emerald-glow: rgba(16, 185, 129, 0.45);
+
+  --neon-violet: #8b5cf6;
+  --neon-purple: #a855f7;
+  --violet-glow: rgba(139, 92, 246, 0.45);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-deep);
+  color: #cbd5e1;
+  overflow-x: hidden;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+}
+
+/* --------------------------------------------------------------------------
+   2. Sleek Custom Cyber Scrollbar
+   -------------------------------------------------------------------------- */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #04060c;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 9999px;
+  border: 2px solid #04060c;
+  transition: background-color 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+/* --------------------------------------------------------------------------
+   3. Custom Selection & Reset
+   -------------------------------------------------------------------------- */
+::selection {
+  background-color: rgba(0, 240, 255, 0.25);
+  color: #00f0ff;
+}
+
+a, button, input, select, textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   4. High-Contrast Text Glows (Eye-Catching Headline Styling)
+   -------------------------------------------------------------------------- */
+.text-glow-cyan {
+  text-shadow: 0 0 25px rgba(0, 240, 255, 0.5), 0 0 50px rgba(0, 240, 255, 0.25);
+}
+
+.text-glow-emerald {
+  text-shadow: 0 0 25px rgba(16, 185, 129, 0.5), 0 0 50px rgba(16, 185, 129, 0.25);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 25px rgba(255, 94, 54, 0.5), 0 0 50px rgba(255, 94, 54, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   5. Hero Profile Multi-Color Ambient Rotating Glow (Signature Feature)
+   -------------------------------------------------------------------------- */
+@keyframes multiGlowRotate {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.hero-profile-glow {
+  position: relative;
+}
+
+.hero-profile-glow::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 1.5rem;
+  padding: 2px;
+  background: linear-gradient(135deg, #00f0ff, #8b5cf6, #ff5e36, #ffa000);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+  animation: multiGlowRotate 8s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   6. Service Cards Top-Border Ambient Glows (Exact Match with Image)
+   -------------------------------------------------------------------------- */
+.service-glow-cyan {
+  border-top: 2px solid #00f0ff !important;
+  box-shadow: 0 -12px 30px -5px rgba(0, 240, 255, 0.25);
+}
+
+.service-glow-blue {
+  border-top: 2px solid #3b82f6 !important;
+  box-shadow: 0 -12px 30px -5px rgba(59, 130, 246, 0.25);
+}
+
+.service-glow-orange {
+  border-top: 2px solid #ff5e36 !important;
+  box-shadow: 0 -12px 30px -5px rgba(255, 94, 54, 0.25);
+}
+
+.service-glow-emerald {
+  border-top: 2px solid #10b981 !important;
+  box-shadow: 0 -12px 30px -5px rgba(16, 185, 129, 0.25);
+}
+
+.service-glow-sky {
+  border-top: 2px solid #38bdf8 !important;
+  box-shadow: 0 -12px 30px -5px rgba(56, 189, 248, 0.25);
+}
+
+.service-glow-purple {
+  border-top: 2px solid #a855f7 !important;
+  box-shadow: 0 -12px 30px -5px rgba(168, 85, 247, 0.25);
+}
+
+/* --------------------------------------------------------------------------
+   7. PageSpeed 100 Ring Neon Pulse
+   -------------------------------------------------------------------------- */
+@keyframes emeraldRingPulse {
+  0%, 100% {
+    box-shadow: 0 0 25px 0 rgba(16, 185, 129, 0.4);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 50px 8px rgba(16, 185, 129, 0.65);
+    transform: scale(1.02);
+  }
+}
+
+.pagespeed-circle {
+  animation: emeraldRingPulse 3.5s ease-in-out infinite;
+}
+
+/* --------------------------------------------------------------------------
+   8. IDE Code Terminal Workspace
+   -------------------------------------------------------------------------- */
+pre code {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  line-height: 1.75;
+  tab-size: 2;
+}
+
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.15) transparent;
+}
+
+pre::-webkit-scrollbar {
+  height: 5px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 4px;
+}
+
+pre::-webkit-scrollbar-thumb:hover {
+  background: var(--neon-cyan);
+}
+
+/* Terminal Tab Switcher Active State */
+.terminal-tab-btn {
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.terminal-tab-btn.active {
+  color: #ffffff !important;
+  border-bottom: 2px solid var(--neon-cyan) !important;
+  background-color: rgba(255, 255, 255, 0.03) !important;
+}
+
+/* --------------------------------------------------------------------------
+   9. About Section Philosophy Tabs Styling
+   -------------------------------------------------------------------------- */
+.about-tab-btn {
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-tab-btn.active {
+  background-color: rgba(0, 240, 255, 0.15) !important;
+  color: var(--neon-cyan) !important;
+  border-color: rgba(0, 240, 255, 0.4) !important;
+  box-shadow: 0 0 20px -5px rgba(0, 240, 255, 0.3);
+}
+
+.about-tab-panel {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* --------------------------------------------------------------------------
+   10. Interactive Controls (Pricing Calculator, Filters & Inputs)
+   -------------------------------------------------------------------------- */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--neon-cyan) !important;
+  box-shadow: 0 0 0 2px rgba(0, 240, 255, 0.25);
+}
+
+select option {
+  background-color: #090e1a;
+  color: #f1f5f9;
+  padding: 10px;
+}
+
+/* Scope Selector Button Active State */
+.scope-btn {
+  transition: all 0.2s ease;
+}
+
+.scope-btn.active {
+  border-color: var(--neon-cyan) !important;
+  background-color: rgba(0, 240, 255, 0.12) !important;
+  box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.35);
+}
+
+/* Portfolio Filter Button Active State */
+.filter-btn {
+  transition: all 0.2s ease;
+}
+
+.filter-btn.active {
+  background-color: var(--neon-cyan) !important;
+  color: #000000 !important;
+  font-weight: 800 !important;
+  box-shadow: 0 0 20px -3px rgba(0, 240, 255, 0.4);
+}
+
+/* Speed Switcher Active State */
+.speed-toggle-btn.active {
+  background-color: var(--bg-card) !important;
+  color: var(--neon-cyan) !important;
+  border-color: var(--border-subtle) !important;
+}
+
+/* Custom Addon Checkbox */
+.addon-input {
+  appearance: none;
+  width: 1.125rem;
+  height: 1.125rem;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 0.25rem;
+  background-color: rgba(255, 255, 255, 0.03);
+  display: inline-grid;
+  place-content: center;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.addon-input:checked {
+  background-color: var(--neon-cyan);
+  border-color: var(--neon-cyan);
+  box-shadow: 0 0 10px var(--neon-cyan);
+}
+
+.addon-input:checked::before {
+  content: "";
+  width: 0.625rem;
+  height: 0.625rem;
+  clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+  background-color: #04060c;
+}
+
+/* --------------------------------------------------------------------------
+   11. FAQ Accordion Active & Transition States
+   -------------------------------------------------------------------------- */
+.faq-card {
+  transition: border-color 0.25s ease, background-color 0.25s ease;
+}
+
+.faq-card.active {
+  border-color: var(--neon-cyan) !important;
+  background-color: rgba(9, 14, 26, 0.95);
+  box-shadow: 0 0 25px -8px rgba(0, 240, 255, 0.2);
+}
+
+.faq-card.active .faq-icon {
+  color: var(--neon-cyan);
+}
+
+.faq-body {
+  transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s ease;
+}
+
+/* --------------------------------------------------------------------------
+   12. Responsive Micro-Adjustments
+   -------------------------------------------------------------------------- */
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.35rem !important;
+    line-height: 1.15 !important;
+  }
+}
+
+/* ==========================================================================
+   FIRE-ORANGE CYBER GLOW TOP SCROLL PROGRESS BAR
+   Pure CSS - Hardware Accelerated (Ultra Smooth 60fps/120fps)
+   ========================================================================== */
+
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3.5px; /* প্রিমিয়াম ও এলিগ্যান্ট থিকনেস */
+  
+  /* আপনার পোর্টফোলিওর সিগনেচার ফায়ার-অরেঞ্জ গ্রেডিয়েন্ট */
+  background: linear-gradient(90deg, #FF5E36 0%, #FF3B30 50%, #FFA000 100%);
+  
+  /* হাই-কন্ট্রাস্ট অরেঞ্জ সাইবার গ্লো ইফেক্ট */
+  box-shadow: 0 0 12px rgba(255, 94, 54, 0.85), 
+              0 0 22px rgba(255, 160, 0, 0.45);
+  
+  /* GPU হার্ডওয়্যার অ্যাক্সিলারেশন (কোনো ল্যাগ ছাড়া মাখনের মতো স্ক্রলিং) */
+  transform-origin: left;
+  transform: scaleX(0);
+  
+  /* নেভবারের (z-50) উপরে থাকবে কিন্তু কোনো মেনু বা বাটনে বাধা দেবে না */
+  z-index: 99999;
+  pointer-events: none;
+  
+  /* আধুনিক পিওর CSS স্ক্রল অ্যানিমেশন */
+  animation: fireScrollProgress auto linear forwards;
+  animation-timeline: scroll(root block);
+}
+
+@keyframes fireScrollProgress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #FF5E36, #FFA000);
+  box-shadow: 0 0 12px rgba(255, 94, 54, 0.8);
+}
+
