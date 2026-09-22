@@ -393,3 +393,99 @@ body::before {
   box-shadow: 0 0 12px rgba(255, 94, 54, 0.8);
 }
 
+/* =====================================
+   WhatsApp Sticky Floating Button
+===================================== */
+
+/* ফ্লোটিং ফিক্সড পজিশন (ডানদিকের নিচে) */
+.hubohu-wa-wrapper {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999999; /* ওয়েবসাইটের সব কন্টেন্টের উপরে থাকবে */
+}
+
+/* পেছনের ডার্ক-গ্রিন আভা (ছবি অনুযায়ী Halo Effect) */
+.hubohu-wa-halo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 126px;
+    height: 126px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(37, 211, 102, 0.42) 0%, rgba(20, 110, 55, 0.28) 45%, rgba(10, 60, 30, 0.12) 65%, transparent 72%);
+    pointer-events: none; /* পেছনের টেক্সট বা লিংকে ক্লিকে যেন কোনো ঝামেলা না হয় */
+    z-index: 1;
+    animation: hubohu-wa-pulse 2.6s ease-in-out infinite;
+}
+
+/* মূল সবুজ বাটন */
+.hubohu-wa-btn {
+    position: relative;
+    z-index: 2;
+    width: 58px;
+    height: 58px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.25);
+    transition: transform 0.25s ease, background-color 0.25s ease;
+}
+
+/* ভেতরের SVG আইকন */
+.hubohu-wa-btn .hubohu-wa-icon {
+    width: 34px;
+    height: 34px;
+}
+
+/* মাউস নিলে হালকা বড় ও স্মুথ ট্রানজিশন */
+.hubohu-wa-wrapper:hover .hubohu-wa-btn {
+    transform: scale(1.08);
+    background-color: #20ba59;
+}
+
+/* পেছনের আভার স্মুথ ব্রিদিং অ্যানিমেশন */
+@keyframes hubohu-wa-pulse {
+    0%, 100% {
+        transform: translate(-50%, -50%) scale(0.95);
+        opacity: 0.85;
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.1);
+        opacity: 1;
+    }
+}
+
+/* =====================================
+   Mobile Responsive (ছোট ডিভাইসের জন্য)
+===================================== */
+@media (max-width: 768px) {
+    .hubohu-wa-wrapper {
+        bottom: 18px;
+        right: 18px;
+        width: 50px;
+        height: 50px;
+    }
+    .hubohu-wa-halo {
+        width: 104px;
+        height: 104px;
+    }
+    .hubohu-wa-btn {
+        width: 50px;
+        height: 50px;
+    }
+    .hubohu-wa-btn .hubohu-wa-icon {
+        width: 28px;
+        height: 28px;
+    }
+}
+
